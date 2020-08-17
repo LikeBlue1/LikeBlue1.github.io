@@ -22,31 +22,38 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false};
   </script>
 
-  <meta name="description" content="人生如逆旅，我亦是行人">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LikeBlue1">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="在使用IDEA中的GIT功能拉取小组项目时出现连接超时问题。通过查询，找到以下两个解决方案。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IDEA解决Github连接超时ideaclone failed: unable to access: failed to connect to github.com port 443: timed">
+<meta property="og:url" content="http://yoursite.com/2020/08/17/IDEA%E8%A7%A3%E5%86%B3Github%E8%BF%9E%E6%8E%A5%E8%B6%85%E6%97%B6ideaclone-failed-unable-to-access-failed-to-connect-to-github-com-port-443-timed/index.html">
 <meta property="og:site_name" content="LikeBlue1">
-<meta property="og:description" content="人生如逆旅，我亦是行人">
+<meta property="og:description" content="在使用IDEA中的GIT功能拉取小组项目时出现连接超时问题。通过查询，找到以下两个解决方案。">
 <meta property="og:locale">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200629134315133.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200629135308751.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VsZGJybw==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020062913541052.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VsZGJybw==,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2020-08-17T05:37:28.000Z">
+<meta property="article:modified_time" content="2020-08-17T05:38:39.233Z">
 <meta property="article:author" content="LikeBlue1">
+<meta property="article:tag" content="-git">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200629134315133.png">
 
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2020/08/17/IDEA%E8%A7%A3%E5%86%B3Github%E8%BF%9E%E6%8E%A5%E8%B6%85%E6%97%B6ideaclone-failed-unable-to-access-failed-to-connect-to-github-com-port-443-timed/">
 
 
 <script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-Hans'
   };
 </script>
 
-  <title>LikeBlue1</title>
+  <title>IDEA解决Github连接超时ideaclone failed: unable to access: failed to connect to github.com port 443: timed | LikeBlue1</title>
   
 
 
@@ -166,7 +173,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -178,6 +185,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BA%E7%8E%B0%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">出现问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%A1%88%E4%B8%80"><span class="nav-number">2.</span> <span class="nav-text">方案一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%A1%88%E4%BA%8C"><span class="nav-number">3.</span> <span class="nav-text">方案二</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -241,11 +249,12 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
       
 
       
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
@@ -264,10 +273,9 @@
     
     
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/17/IDEA%E8%A7%A3%E5%86%B3Github%E8%BF%9E%E6%8E%A5%E8%B6%85%E6%97%B6ideaclone-failed-unable-to-access-failed-to-connect-to-github-com-port-443-timed/" class="post-title-link" itemprop="url">IDEA解决Github连接超时ideaclone failed: unable to access: failed to connect to github.com port 443: timed</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          IDEA解决Github连接超时ideaclone failed: unable to access: failed to connect to github.com port 443: timed
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -319,16 +327,16 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>在使用IDEA中的GIT功能拉取小组项目时出现连接超时问题。<br>通过查询，找到以下两个解决方案。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/08/17/IDEA%E8%A7%A3%E5%86%B3Github%E8%BF%9E%E6%8E%A5%E8%B6%85%E6%97%B6ideaclone-failed-unable-to-access-failed-to-connect-to-github-com-port-443-timed/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
+        <p>在使用IDEA中的GIT功能拉取小组项目时出现连接超时问题。<br>通过查询，找到以下两个解决方案。</p>
+<a id="more"></a>
+<h2 id="出现问题"><a href="#出现问题" class="headerlink" title="出现问题"></a>出现问题</h2><p><img src="https://img-blog.csdnimg.cn/20200629134315133.png" alt="错误信息"><br>在使用IDEA中的GIT功能拉取小组项目时出现连接超时问题。<br>通过查询，找到以下两个解决方案。</p>
+<h2 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/dashi_lu/article/details/89641778">https://blog.csdn.net/dashi_lu/article/details/89641778</a><br>这个是网上找到的第一个方案，我动手试了并未解决我的问题。不过遇到此问题的同学们可以先试一试。</p>
+<h2 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h2><p>WIN+R弹出运行窗口后输入cmd<br>在cmd中输入ping github.com，试试看能不能连通。<br>或者在桌面上右键点击git bash here 输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com  或者  ssh -V git@github.com</span><br></pre></td></tr></table></figure>
+<p>此时，出现如下的问题：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh: connect to host github.com port 22: Connection timed out</span><br></pre></td></tr></table></figure>
+<p>或者cmd上显示连接超时。那么不妨看看这个解决方法，亲测有效。<br>打开<br>C:\Windows\System32\drivers\etc下的Host文件<br>我打开这个文件才发现我修改了配置信息，已经被我添加了红色区域标记的东西。<br><img src="https://img-blog.csdnimg.cn/20200629135308751.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VsZGJybw==,size_16,color_FFFFFF,t_70" alt="区域"><br>我们要做的就是把多余的东西删去，也就是留下：<br><img src="https://img-blog.csdnimg.cn/2020062913541052.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0VsZGJybw==,size_16,color_FFFFFF,t_70" alt="区域2"><br>再重新用IDEA试过重新clone成功拉取Github上的项目，问题解决。<br>最后，我在查找的过程中发现了一篇IDEA中git的使用教程，蛮详细的，做个记录并一起分享：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40563761/article/details/91347443">https://blog.csdn.net/qq_40563761/article/details/91347443</a></p>
+
     </div>
 
     
@@ -336,206 +344,21 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/git/" rel="tag"># -git</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/17/SpringBoot%E4%B8%8Bapplication%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%BF%9E%E6%8E%A5mysql8-0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/IMG_6592.JPG">
-      <meta itemprop="name" content="LikeBlue1">
-      <meta itemprop="description" content="人生如逆旅，我亦是行人">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LikeBlue1">
-    </span>
-
-    
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/17/SpringBoot%E4%B8%8Bapplication%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%BF%9E%E6%8E%A5mysql8-0/" class="post-title-link" itemprop="url">SpringBoot下application配置文件连接mysql8.0</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-08-17 13:34:25 / 修改时间：13:36:29" itemprop="dateCreated datePublished" datetime="2020-08-17T13:34:25+08:00">2020-08-17</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SpringBoot/" itemprop="url" rel="index"><span itemprop="name">-SpringBoot</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/08/17/SpringBoot%E4%B8%8Bapplication%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%BF%9E%E6%8E%A5mysql8-0/" class="post-meta-item leancloud_visitors" data-flag-title="SpringBoot下application配置文件连接mysql8.0" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/08/17/SpringBoot%E4%B8%8Bapplication%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%BF%9E%E6%8E%A5mysql8-0/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/08/17/SpringBoot%E4%B8%8Bapplication%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%BF%9E%E6%8E%A5mysql8-0/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>SpringBoot下application配置文件连接mysql8.0,特此记录，谨防遗忘。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/08/17/SpringBoot%E4%B8%8Bapplication%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%BF%9E%E6%8E%A5mysql8-0/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/17/%E5%9F%BA%E4%BA%8EAndroid%E5%BC%80%E5%8F%91%E7%9A%84%E5%A4%87%E5%BF%98%E5%BD%95%E8%BD%AF%E4%BB%B6%EF%BC%88%E5%88%9B%E5%BB%BA%E3%80%81%E9%80%9A%E7%9F%A5%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/IMG_6592.JPG">
-      <meta itemprop="name" content="LikeBlue1">
-      <meta itemprop="description" content="人生如逆旅，我亦是行人">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LikeBlue1">
-    </span>
-
-    
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/17/%E5%9F%BA%E4%BA%8EAndroid%E5%BC%80%E5%8F%91%E7%9A%84%E5%A4%87%E5%BF%98%E5%BD%95%E8%BD%AF%E4%BB%B6%EF%BC%88%E5%88%9B%E5%BB%BA%E3%80%81%E9%80%9A%E7%9F%A5%EF%BC%89/" class="post-title-link" itemprop="url">基于Android开发的备忘录软件（创建、通知）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-08-17 12:59:56 / 修改时间：13:11:44" itemprop="dateCreated datePublished" datetime="2020-08-17T12:59:56+08:00">2020-08-17</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">-Android</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/08/17/%E5%9F%BA%E4%BA%8EAndroid%E5%BC%80%E5%8F%91%E7%9A%84%E5%A4%87%E5%BF%98%E5%BD%95%E8%BD%AF%E4%BB%B6%EF%BC%88%E5%88%9B%E5%BB%BA%E3%80%81%E9%80%9A%E7%9F%A5%EF%BC%89/" class="post-meta-item leancloud_visitors" data-flag-title="基于Android开发的备忘录软件（创建、通知）" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/08/17/%E5%9F%BA%E4%BA%8EAndroid%E5%BC%80%E5%8F%91%E7%9A%84%E5%A4%87%E5%BF%98%E5%BD%95%E8%BD%AF%E4%BB%B6%EF%BC%88%E5%88%9B%E5%BB%BA%E3%80%81%E9%80%9A%E7%9F%A5%EF%BC%89/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/08/17/%E5%9F%BA%E4%BA%8EAndroid%E5%BC%80%E5%8F%91%E7%9A%84%E5%A4%87%E5%BF%98%E5%BD%95%E8%BD%AF%E4%BB%B6%EF%BC%88%E5%88%9B%E5%BB%BA%E3%80%81%E9%80%9A%E7%9F%A5%EF%BC%89/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>结合本学期课程所学的关于<strong>Android通知</strong>的知识以及期中期末作业的<strong>记事本</strong>软件应用开发，我在之前就有想法做一个将两者结合的应用即<strong>备忘录</strong>，既能记事又能提醒。<br>具体定义为：具有备忘录的基本功能，支持备忘事项的创建，同时提供<strong>定时提醒</strong>功能（在指定的时间到达前在通知栏上弹出相应的通知来提醒用户）。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/08/17/%E5%9F%BA%E4%BA%8EAndroid%E5%BC%80%E5%8F%91%E7%9A%84%E5%A4%87%E5%BF%98%E5%BD%95%E8%BD%AF%E4%BB%B6%EF%BC%88%E5%88%9B%E5%BB%BA%E3%80%81%E9%80%9A%E7%9F%A5%EF%BC%89/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/08/17/SpringBoot%E4%B8%8Bapplication%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%BF%9E%E6%8E%A5mysql8-0/" rel="prev" title="SpringBoot下application配置文件连接mysql8.0">
+                  <i class="fa fa-chevron-left"></i> SpringBoot下application配置文件连接mysql8.0
+                </a>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
   
@@ -543,11 +366,9 @@
   
 
 
-  
-
-
 
       
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
