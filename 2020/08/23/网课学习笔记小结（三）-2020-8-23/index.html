@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false};
+  </script>
+
+  <meta name="description" content="今日学习内容：Spring boot 集成 Thymeleaf模板">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网课学习笔记小结（三）  2020-8-23">
+<meta property="og:url" content="http://yoursite.com/2020/08/23/%E7%BD%91%E8%AF%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%B0%8F%E7%BB%93%EF%BC%88%E4%B8%89%EF%BC%89-2020-8-23/index.html">
+<meta property="og:site_name" content="LikeBlue1">
+<meta property="og:description" content="今日学习内容：Spring boot 集成 Thymeleaf模板">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-08-23T09:47:20.000Z">
+<meta property="article:modified_time" content="2020-08-23T09:48:13.493Z">
+<meta property="article:author" content="LikeBlue1">
+<meta property="article:tag" content="-Thymeleaf">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://yoursite.com/2020/08/23/%E7%BD%91%E8%AF%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%B0%8F%E7%BB%93%EF%BC%88%E4%B8%89%EF%BC%89-2020-8-23/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>网课学习笔记小结（三）  2020-8-23 | LikeBlue1</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">LikeBlue1</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81Thymeleaf-%E6%A8%A1%E6%9D%BF"><span class="nav-number">2.</span> <span class="nav-text">一、Thymeleaf 模板</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8"><span class="nav-number">2.1.</span> <span class="nav-text">1.为什么使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Spring-boot%E6%80%8E%E4%B9%88%E9%9B%86%E6%88%90Thymeleaf%E6%A8%A1%E6%9D%BF"><span class="nav-number">2.2.</span> <span class="nav-text">2.Spring boot怎么集成Thymeleaf模板</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Thymeleaf-%E7%9A%84%E6%A0%87%E5%87%86%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8F%8A%E5%B8%B8%E8%A7%81%E5%B1%9E%E6%80%A7"><span class="nav-number">3.</span> <span class="nav-text">二、Thymeleaf 的标准表达式及常见属性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%A0%87%E5%87%86%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">3.1.</span> <span class="nav-text">1.标准表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%B8%B8%E8%A7%81%E5%B1%9E%E6%80%A7"><span class="nav-number">3.2.</span> <span class="nav-text">2.常见属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Thymeleaf%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">3.3.</span> <span class="nav-text">3.Thymeleaf字符串拼接的两种方式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81Thymeleaf-%E5%9C%A8SpringBoot%E4%B8%AD%E7%9A%84%E9%85%8D%E7%BD%AE%E5%A4%A7%E5%85%A8"><span class="nav-number">4.</span> <span class="nav-text">三、Thymeleaf 在SpringBoot中的配置大全</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="LikeBlue1"
+      src="/images/IMG_6592.JPG">
+  <p class="site-author-name" itemprop="name">LikeBlue1</p>
+  <div class="site-description" itemprop="description">人生如逆旅，我亦是行人</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/LikeBlue1" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;LikeBlue1" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yangshaoqi105@gmail.com" title="E-Mail → mailto:yangshaoqi105@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/23/%E7%BD%91%E8%AF%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%B0%8F%E7%BB%93%EF%BC%88%E4%B8%89%EF%BC%89-2020-8-23/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/IMG_6592.JPG">
+      <meta itemprop="name" content="LikeBlue1">
+      <meta itemprop="description" content="人生如逆旅，我亦是行人">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LikeBlue1">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          网课学习笔记小结（三）  2020-8-23
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-08-23 17:47:20 / 修改时间：17:48:13" itemprop="dateCreated datePublished" datetime="2020-08-23T17:47:20+08:00">2020-08-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/notes/" itemprop="url" rel="index"><span itemprop="name">-notes</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/08/23/%E7%BD%91%E8%AF%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%B0%8F%E7%BB%93%EF%BC%88%E4%B8%89%EF%BC%89-2020-8-23/" class="post-meta-item leancloud_visitors" data-flag-title="网课学习笔记小结（三）  2020-8-23" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/08/23/%E7%BD%91%E8%AF%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%B0%8F%E7%BB%93%EF%BC%88%E4%B8%89%EF%BC%89-2020-8-23/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/08/23/%E7%BD%91%E8%AF%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%B0%8F%E7%BB%93%EF%BC%88%E4%B8%89%EF%BC%89-2020-8-23/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>今日学习内容：Spring boot 集成 Thymeleaf模板</p>
+<a id="more"></a>
+
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>今日学习内容：Spring boot 集成 Thymeleaf模板</p>
+<h1 id="一、Thymeleaf-模板"><a href="#一、Thymeleaf-模板" class="headerlink" title="一、Thymeleaf 模板"></a>一、Thymeleaf 模板</h1><h2 id="1-为什么使用"><a href="#1-为什么使用" class="headerlink" title="1.为什么使用"></a>1.为什么使用</h2><p>在之前的学习中，学习了jsp以及相关的el表达式，jstl标签库等知识，这是为了方便程序员需要在前端页面处理显示数据。但是el表达式以及jstl标签库在Html页面上不能使用，所以就需要模板引擎了。而与Spring boot完美契合也是官方文档推荐使用的Thymeleaf模板引擎也就进入了我的学习视野。</p>
+<h2 id="2-Spring-boot怎么集成Thymeleaf模板"><a href="#2-Spring-boot怎么集成Thymeleaf模板" class="headerlink" title="2.Spring boot怎么集成Thymeleaf模板"></a>2.Spring boot怎么集成Thymeleaf模板</h2><p>1、第一步：在Maven中引入Thymeleaf的依赖，加入以下依赖配置即可：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>2、第二步：在Spring boot的核心配置文件application.properties中对Thymeleaf进行配置（简易配置只需要两个，后续开发需要查看文档进行配置）：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#开发阶段，建议关闭thymeleaf的缓存（上线可改为<span class="literal">true</span>）</span><br><span class="line">spring.thymeleaf.cache=<span class="literal">false</span></span><br><span class="line">#使用遗留的html5以去掉对html标签的校验（这个是因为我们在写html代码时并不需要规范书写浏览器也能识别，</span><br><span class="line">但是对于Thymeleaf模板则可能造成错误）</span><br><span class="line">spring.thymeleaf.mode=LEGACYHTML5</span><br></pre></td></tr></table></figure>
+<p>另外还需添加一下依赖：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;net.sourceforge.nekohtml&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;nekohtml&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.unbescape&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;unbescape&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.1.5.RELEASE&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>3、第三步：写一个Controller去映射到模板页面，注意，这个方法返回的是”xxx”而不是”xxx.html”<br>4、第四步：在src/main/resources的templates下新建一个xxx.html页面用于展示数据(注意：严格按照资源根目录去放置html以及静态资源例如图片、样式等)：<br>HTML页面的<html>元素中加入以下属性(命名空间)：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;html xmlns:th=<span class="string">&quot;http://www.thymeleaf.org&quot;</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="二、Thymeleaf-的标准表达式及常见属性"><a href="#二、Thymeleaf-的标准表达式及常见属性" class="headerlink" title="二、Thymeleaf 的标准表达式及常见属性"></a>二、Thymeleaf 的标准表达式及常见属性</h1><h2 id="1-标准表达式"><a href="#1-标准表达式" class="headerlink" title="1.标准表达式"></a>1.标准表达式</h2><table>
+<thead>
+<tr>
+<th></th>
+<th>标准变量表达式</th>
+<th>选择变量表达式</th>
+<th>URL表达式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>语法</td>
+<td>${…}</td>
+<td>*{…}</td>
+<td>@{…}</td>
+</tr>
+<tr>
+<td>用法</td>
+<td>Thymeleaf 中的变量表达式使用 <code>$&#123;变量名&#125;</code> 的方式获取其中的数据例如：<code>&lt;span th:text=&quot;$&#123;user.name&#125;&quot;&gt;x&lt;/span&gt;</code></td>
+<td>选择变量表达式，也叫星号变量表达式，使用 th:object 属性来绑定对象<code>&lt;div th:object=&quot;$&#123;user&#125;&quot; &gt; &lt;span th:text=&quot;*&#123;name&#125;&quot;张&lt;/span&gt;</code>等价于<code>&lt;span th:text=&quot;$&#123;user.name&#125;&quot; &gt;张&lt;/span&gt;</code></td>
+<td>URL表达式可用于 <code>&lt;script src=&quot;...&quot;&gt;、&lt;link href=&quot;...&quot;&gt;、&lt;a href=&quot;...&quot;&gt;</code>等，推荐使用相对URL方式：<code>&lt;a href=&quot;info.html&quot; th:href=&quot;@&#123;&#39;/user/info?id=&#39;+$&#123;user.id&#125;&#125;&quot;&gt;查看&lt;/a&gt;</code> （项目的上下文名会被自动添加）</td>
+</tr>
+</tbody></table>
+<h2 id="2-常见属性"><a href="#2-常见属性" class="headerlink" title="2.常见属性"></a>2.常见属性</h2><table>
+<thead>
+<tr>
+<th>常见属性</th>
+<th>作用</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>th:action</td>
+<td>定义后台控制器的路径，类似<code>&lt;form&gt;</code>标签的action属性</td>
+<td><code>&lt;form id=&quot;login&quot; th:action=&quot;@&#123;/login&#125;&quot;&gt;......&lt;/form&gt;</code></td>
+</tr>
+<tr>
+<td><strong>th:each（重要）</strong></td>
+<td>从后台传来一个对象集合那么就可以使用此属性遍历输出，它与JSTL中的&lt;c: forEach&gt;类似，此属性既可以循环遍历集合，也可以循环遍历数组及Map</td>
+<td><code>&lt;tr th:each=&quot;user: $&#123;userlist&#125;&quot;&gt;&lt;td th:text=&quot;$&#123;userStat.index&#125;&quot;&gt;&lt;/td&gt;&lt;td th:text=&quot;$&#123;user.id&#125;&quot;&gt;&lt;/td&gt;&lt;td th:text=&quot;$&#123;user.nick&#125;&quot;&gt;&lt;/td&gt;&lt;td th:text=&quot;$&#123;user.phone&#125;&quot;&gt;&lt;/td&gt;&lt;/tr&gt;</code></td>
+</tr>
+<tr>
+<td>th:href</td>
+<td>定义超链接</td>
+<td><code>&lt;a  class=&quot;login&quot; th:href=&quot;@&#123;/login&#125;&quot;&gt;登录&lt;/a&gt;</code></td>
+</tr>
+<tr>
+<td>th:id</td>
+<td>类似html标签中的id属性</td>
+<td><code>&lt;span th:id=&quot;$&#123;hello&#125;&quot;&gt;aaa&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td><strong>th:if(重要)</strong></td>
+<td>条件判断</td>
+<td><code>&lt;span th:if=&quot;$&#123;sex&#125; == 1&quot; &gt;男：&lt;input type=&quot;radio&quot; name=&quot;se&quot;  th:value=&quot;男&quot; /&gt;&lt;/span&gt;</code></td>
+</tr>
+<tr>
+<td><strong>th:switch/th:case（重要）</strong></td>
+<td>switch，case判断语句</td>
+<td><code>&lt;div th:switch=&quot;$&#123;sex&#125;&quot;&gt;&lt;p th:case=&quot;1&quot;&gt;性别：男&lt;/p&gt;&lt;p th:case=&quot;2&quot;&gt;性别：女&lt;/p&gt;&lt;p th:case=&quot;*&quot;&gt;性别：未知&lt;/p&gt;&lt;/div&gt;</code></td>
+</tr>
+<tr>
+<td>th:object</td>
+<td>用于数据对象绑定</td>
+<td>通常用于选择变量表达式（星号表达式）</td>
+</tr>
+<tr>
+<td>th:src</td>
+<td>用于外部资源引入，比如<code>&lt;script&gt;</code>标签的src属性，<code>&lt;img&gt;</code>标签的src属性，常与@{}表达式结合使用</td>
+<td><code>&lt;script th:src=&quot;@&#123;/static/js/jquery-2.4.min.js&#125;&quot;&gt;&lt;/script&gt;</code></td>
+</tr>
+<tr>
+<td><strong>th:text（重要）</strong></td>
+<td>用于文本的显示</td>
+<td><code>&lt;input type=&quot;text&quot; th:text=&quot;$&#123;realName&#125;&quot;&gt;</code></td>
+</tr>
+<tr>
+<td><strong>th:value（重要）</strong></td>
+<td>类似html标签中的value属性，能对某元素的value属性进行赋值</td>
+<td><code>&lt;input type=&quot;hidden&quot; id=&quot;userId&quot; th:value=&quot;$&#123;userId&#125;&quot;&gt;</code></td>
+</tr>
+</tbody></table>
+<h2 id="3-Thymeleaf字符串拼接的两种方式"><a href="#3-Thymeleaf字符串拼接的两种方式" class="headerlink" title="3.Thymeleaf字符串拼接的两种方式"></a>3.Thymeleaf字符串拼接的两种方式</h2><p><strong>第一种：字面拼接</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span> <span class="attr">th:text</span>=<span class="string">&quot;&#x27;第&#x27;+$&#123;sex&#125;+&#x27;页 ,共&#x27;+$&#123;sex&#125;+&#x27;页&#x27;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>第二种：使用“|”减少了字符串的拼接（推荐、更优雅、更简单）</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span> <span class="attr">th:text</span>=<span class="string">&quot;|第$&#123;sex&#125;页，共$&#123;sex&#125;页|&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="三、Thymeleaf-在SpringBoot中的配置大全"><a href="#三、Thymeleaf-在SpringBoot中的配置大全" class="headerlink" title="三、Thymeleaf 在SpringBoot中的配置大全"></a>三、Thymeleaf 在SpringBoot中的配置大全</h1><p>Thymeleaf的配置文件说明：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">spring.thymeleaf.cache = <span class="keyword">true</span>                   ＃启用模板缓存。</span><br><span class="line">spring.thymeleaf.check-template = <span class="keyword">true</span>          ＃在呈现模板之前检查模板是否存在。</span><br><span class="line">spring.thymeleaf.check-template-location = <span class="keyword">true</span> ＃检查模板位置是否存在。</span><br><span class="line">spring.thymeleaf.content-type = text/html       ＃Content-Type值。</span><br><span class="line">spring.thymeleaf.enabled = <span class="keyword">true</span>                 ＃启用MVC Thymeleaf视图解析。</span><br><span class="line">spring.thymeleaf.encoding = UTF-<span class="number">8</span>                 ＃模板编码。</span><br><span class="line">spring.thymeleaf.mode = HTML5                     ＃应用于模板的模板模式。</span><br><span class="line">spring.thymeleaf.prefix = classpath:/templates/ ＃在构建URL时预先查看名称的前缀。</span><br><span class="line">spring.thymeleaf.suffix = .html                 ＃构建URL时附加到查看名称的后缀。</span><br><span class="line">#spring.thymeleaf.excluded-view-names =         ＃应该从解决方案中排除的视图名称的逗号分隔列表。</span><br><span class="line">spring.thymeleaf.template-resolver-order =         ＃链中模板解析器的顺序。</span><br><span class="line">spring.thymeleaf.view-names =                     ＃可以解析的视图名称的逗号分隔列表。</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>以上为今日网课学习笔记小结<br>欢迎关注我的个人博客：<a target="_blank" rel="noopener" href="https://likeblue1.github.io/">https://likeblue1.github.io/</a><br>2020-8-23</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Thymeleaf/" rel="tag"># -Thymeleaf</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/08/21/%E7%BD%91%E8%AF%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%B0%8F%E7%BB%93%EF%BC%88%E4%BA%8C%EF%BC%89-2020-8-21/" rel="prev" title="网课学习笔记小结（二） 2020-8-21">
+                  <i class="fa fa-chevron-left"></i> 网课学习笔记小结（二） 2020-8-21
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+  
+  
+  
+
+
+
+      
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LikeBlue1</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+<script>
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el  : '#valine-comments',
+      path: location.pathname,
+    }, {"enable":true,"appId":"8hziEzV6BC64hjnKFKusTwKW-gzGzoHsz","appKey":"GOSL8AgVfJdbXNHiDeeBHQmq","placeholder":"Just go go","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-cn","visitor":true,"comment_count":true,"recordIP":false,"serverURLs":null,"enableQQ":false,"requiredFields":[]}
+    ));
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
